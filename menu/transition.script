@@ -1,0 +1,16 @@
+local transitions = require "monarch.transitions.gui"
+
+function init(self)
+	-- create transitions for the node 'root'
+	-- the node will slide in/out from left and right with
+	-- a specific easing, duration and delay
+	self.transition = transitions.create(gui.get_node("root"))
+	.show_in(transitions.slide_in_right, gui.EASING_OUTQUAD, 0.6, 0)
+	.show_out(transitions.slide_out_left, gui.EASING_INQUAD, 0.6, 0)
+	.back_in(transitions.slide_in_left, gui.EASING_OUTQUAD, 0.6, 0)
+	.back_out(transitions.slide_out_right, gui.EASING_INQUAD, 0.6, 0)
+end
+
+function on_message(self, message_id, message, sender)
+	self.transition.handle(message_id, message, sender)
+end

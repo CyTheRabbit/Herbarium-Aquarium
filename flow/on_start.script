@@ -1,0 +1,27 @@
+
+
+go.property("script", hash(""))
+
+
+local require = require "flow/requirehash"
+local wrap = require "flow.wrapscript"
+local flow = require "flow.flow"
+
+
+function init(self)
+	self.session = require(self.script)
+	wrap(self.session)
+	self.session = flow.start(self.session)
+end
+
+function final(self)
+	flow.stop(self.session)
+end
+
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	flow.on_input(action_id, action)
+end

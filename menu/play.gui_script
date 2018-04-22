@@ -1,0 +1,29 @@
+local flow = require "flow.flow"
+local monarch = require "monarch.monarch"
+
+local function session()
+	local box = gui.get_node "box"
+	msg.post("loader:/music#surface", "play_sound")
+	while true do
+		local action_id, action = flow.until_input_released(hash "touch")
+		if gui.pick_node(box, action.x, action.y) then
+			break
+		end
+	end
+	gui.set_position(box, vmath.vector3(240, 0, 0))
+	flow.frames(1)
+	flow.gui_animate(box, gui.PROP_POSITION, gui.PLAYBACK_ONCE_FORWARD,
+	vmath.vector3(240, 40, 0), go.EASING_OUTBACK, 0.5)
+	gui.animate(box, gui.PROP_COLOR, vmath.vector4(1,1,1,0), gui.EASING_OUTSINE, 1)
+	msg.post("loader:/music#surface", "stop_sound")
+	monarch.show(hash "game")
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	flow(session)
+end
+
+function on_input(self, action_id, action)
+	flow.on_input(action_id, action)
+end

@@ -1,0 +1,50 @@
+go.property("time", 2)
+go.property("current_time", 0)
+go.property("gold", 100)
+go.property("id", 10)
+
+local global = require "global"
+
+local function loot(self)
+	global.score = global.score + self.gold
+	msg.post("default:/manager#score", "update")
+
+	particlefx.stop "#bubbles"
+	global.empty[self.id] = true
+
+	msg.post("loader:/music#coin", "play_sound")
+	go.delete()
+end
+
+function init(self)
+	particlefx.play "#bubbles"
+end
+
+function update(self)
+	if self.looting then
+		local cam_pos = go.get_position "default:/camera"
+		local spot_pos = go.get_position()
+		msg.post("default:/camera#lootbar", "pos", { pos = spot_pos - cam_pos })
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash "trigger_response" then
+		if message.enter then
+			self.looting = true
+			go.set("#", "current_time", 0)
+			go.animate("#", "current_time",
+				go.PLAYBACK_ONCE_FORWARD, self.time,
+				go.EASING_LINEAR, self.time, 0,
+				function()
+					loot(self)
+					self.looting = false
+				end)
+			msg.post("default:/camera#lootbar", "start", { position = go.get_position(), time = self.time })
+		else
+			self.looting = false
+			go.cancel_animations("#", "current_time")
+			msg.post("default:/camera#lootbar", "stop")
+		end
+	end
+end

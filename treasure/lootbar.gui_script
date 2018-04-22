@@ -1,0 +1,20 @@
+function init(self)
+	self.pie = gui.get_node "pie"
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash "start" then
+		self.spot_position = message.position
+		gui.set_fill_angle(self.pie, 0)
+		gui.animate(self.pie, gui.PROP_FILL_ANGLE,
+			360, go.EASING_LINEAR, message.time, 0,
+			function()
+				gui.set_fill_angle(self.pie, 0)
+			end)
+	elseif message_id == hash "pos" then
+		gui.set_position(self.pie, message.pos)
+	elseif message_id == hash "stop" then
+		gui.cancel_animation(self.pie, gui.PROP_FILL_ANGLE)
+		gui.set_fill_angle(self.pie, 0)
+	end
+end

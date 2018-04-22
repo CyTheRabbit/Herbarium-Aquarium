@@ -1,0 +1,11 @@
+local global = require "global"
+
+function init(self)
+	msg.post("#", "update")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash "update" then
+		gui.set_text(gui.get_node"label", global.score)
+	end
+end

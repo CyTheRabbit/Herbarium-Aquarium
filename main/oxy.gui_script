@@ -1,0 +1,6 @@
+function on_message(self, message_id, message, sender)
+	if message_id == hash "set_timer" then
+		gui.set_size(gui.get_node "box", vmath.vector3(480, 8, 0))
+		gui.animate(gui.get_node "box", "size.x", 0, gui.EASING_LINEAR, message.time)
+	end
+end

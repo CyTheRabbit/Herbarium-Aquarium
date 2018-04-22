@@ -1,0 +1,12 @@
+images {
+  image: "/assets/bubbleLarge.png"
+}
+images {
+  image: "/assets/bubbleSmall.png"
+}
+images {
+  image: "/assets/coin.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

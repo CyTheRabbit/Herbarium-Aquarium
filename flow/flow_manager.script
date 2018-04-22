@@ -1,0 +1,5 @@
+local flow = require "flow.flow"
+
+function update(self, dt)
+	flow.update(dt)
+end
