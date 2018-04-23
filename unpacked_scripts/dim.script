@@ -1,6 +1,9 @@
 go.property("max_radius", 40)
 go.property("min_radius", 2)
-go.property("dim_speed", 0.05)
+go.property("dim_speed", 0.1)
+go.property("torch_mod", 0.5)
+
+local global = require "global"
 
 function update(self, dt)
 	local pos = go.get_position "player"
@@ -11,7 +14,7 @@ function update(self, dt)
 	pos = pos + cam
 	go.set_position(pos)
 
-	local scale = self.max_radius + cam.y * self.dim_speed
+	local scale = self.max_radius + cam.y * self.dim_speed * (self.torch_mod ^ global.torch)
 	scale = math.max(scale, self.min_radius)
 	go.set_scale(scale)
 end

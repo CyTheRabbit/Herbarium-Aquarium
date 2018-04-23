@@ -4,6 +4,7 @@ local global = {
 	velocity = 1,
 	agility = 1,
 	oxygen = 1,
+	torch = 1,
 }
 
 return global
