@@ -14,14 +14,6 @@ instances {
     z: 0.0
     w: 1.0
   }
-  component_properties {
-    id: "player_movement"
-    properties {
-      id: "speed"
-      value: "10000.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
   scale3 {
     x: 0.5
     y: 0.5
