@@ -1,6 +1,7 @@
 local flow = require "flow.flow"
 
 local function session()
+	msg.post("go1#camera", "acquire_camera_focus")
 	go.set("bkg", "euler", vmath.vector3(0, 0, -1))
 	go.animate("bkg", "euler", go.PLAYBACK_LOOP_PINGPONG, vmath.vector3(0, 0, 1), go.EASING_INOUTSINE, 10)
 end

@@ -19,7 +19,8 @@ local function session()
 	go.set_position(vmath.vector3(0, 480, 0), "pak")
 
 	wait.until_input_pressed(hash "touch")
-	monarch.show(hash "menu")
+	msg.post("#camera", "release_camera_focus")
+	msg.post("#", "next")
 end
 
 function init(self)
@@ -28,6 +29,9 @@ end
 
 function on_message(self, message_id, message, sender)
 	flow.on_message(message_id, message, sender)
+	if message_id == hash "next" then
+		monarch.show(hash "menu")
+	end
 end
 
 function on_input(self, action_id, action)
