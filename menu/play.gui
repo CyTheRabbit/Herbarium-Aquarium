@@ -100,7 +100,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Dive"
+  text: "Play"
   font: "grand"
   id: "text"
   xanchor: XANCHOR_NONE

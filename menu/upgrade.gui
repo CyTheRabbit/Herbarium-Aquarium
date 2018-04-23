@@ -15,8 +15,8 @@ background_color {
 }
 nodes {
   position {
-    x: 240.0
-    y: 540.0
+    x: 0.0
+    y: 632.0
     z: 0.0
     w: 1.0
   }
@@ -34,7 +34,7 @@ nodes {
   }
   size {
     x: 200.0
-    y: 60.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -50,7 +50,7 @@ nodes {
   id: "velocity"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_W
   adjust_mode: ADJUST_MODE_FIT
   layer: ""
   inherit_alpha: true
@@ -69,7 +69,7 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
+    x: 100.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -132,7 +132,7 @@ nodes {
 }
 nodes {
   position {
-    x: 100.0
+    x: 200.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -250,7 +250,7 @@ nodes {
 }
 nodes {
   position {
-    x: -80.0
+    x: 20.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -313,8 +313,8 @@ nodes {
 }
 nodes {
   position {
-    x: 240.0
-    y: 460.0
+    x: 0.0
+    y: 552.0
     z: 0.0
     w: 1.0
   }
@@ -332,7 +332,7 @@ nodes {
   }
   size {
     x: 200.0
-    y: 60.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -348,7 +348,7 @@ nodes {
   id: "agility"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_W
   adjust_mode: ADJUST_MODE_FIT
   layer: ""
   inherit_alpha: true
@@ -367,7 +367,7 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
+    x: 100.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -430,7 +430,7 @@ nodes {
 }
 nodes {
   position {
-    x: 100.0
+    x: 200.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -548,7 +548,7 @@ nodes {
 }
 nodes {
   position {
-    x: -80.0
+    x: 20.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -611,8 +611,8 @@ nodes {
 }
 nodes {
   position {
-    x: 240.0
-    y: 380.0
+    x: 0.0
+    y: 472.0
     z: 0.0
     w: 1.0
   }
@@ -630,7 +630,7 @@ nodes {
   }
   size {
     x: 200.0
-    y: 60.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -646,7 +646,7 @@ nodes {
   id: "oxygen"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_W
   adjust_mode: ADJUST_MODE_FIT
   layer: ""
   inherit_alpha: true
@@ -665,7 +665,7 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
+    x: 100.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -728,7 +728,7 @@ nodes {
 }
 nodes {
   position {
-    x: 100.0
+    x: 200.0
     y: 0.0
     z: 0.0
     w: 1.0
@@ -846,7 +846,7 @@ nodes {
 }
 nodes {
   position {
-    x: -80.0
+    x: 20.0
     y: 0.0
     z: 0.0
     w: 1.0

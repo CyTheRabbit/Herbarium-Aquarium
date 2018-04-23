@@ -45,6 +45,7 @@ function init(self)
 			msg.post(".", "update")
 		end
 	end)
+	msg.post(".", "update")
 end
 
 function on_message(self, message_id, message, sender)
