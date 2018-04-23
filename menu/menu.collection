@@ -122,13 +122,13 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/main.atlas\\\"\\n"
-  "default_animation: \\\"bkg\\\"\\n"
+  "default_animation: \\\"ship\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
-  "    x: 29.5\n"
-  "    y: 67.084\n"
+  "    x: 0.0\n"
+  "    y: 75.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -140,8 +140,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
-    y: 0.0
+    x: 232.0
+    y: 208.0
     z: 0.0
   }
   rotation {
@@ -151,8 +151,48 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 6.0
-    y: 6.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "go"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/main.atlas\\\"\\n"
+  "default_animation: \\\"\\\\320\\\\267\\\\320\\\\260\\\\320\\\\272\\\\320\\\\260\\\\321\\\\202\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: -1.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 240.0
+    y: 427.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 2.0
+    y: 2.0
     z: 1.0
   }
 }
