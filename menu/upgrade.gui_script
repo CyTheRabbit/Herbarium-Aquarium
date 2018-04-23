@@ -58,7 +58,6 @@ end
 
 function on_input(self, action_id, action)
 	if action_id == hash "touch" and action.released then
-		pprint(action)
 		self.vel_btn(action, {})
 		self.agi_btn(action, {})
 		self.oxy_btn(action, {})

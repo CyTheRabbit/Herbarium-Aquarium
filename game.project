@@ -17,3 +17,7 @@ dynamic_orientation = 1
 [physics]
 scale = 0.02
 
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
+
