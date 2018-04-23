@@ -10,6 +10,7 @@ local function loot(self)
 	msg.post("default:/manager#score", "update")
 
 	particlefx.stop "#bubbles"
+	particlefx.play "#loot"
 	global.empty[self.id] = true
 
 	msg.post("loader:/music#coin", "play_sound")
