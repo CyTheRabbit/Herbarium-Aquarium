@@ -1,4 +1,9 @@
-return function()
+local flow = require "flow.flow"
+local wait = flow
+local global = require "global"
+
+
+local function session()
 	while true do
 		local message_id, message = wait.until_message(hash "collision_response")
 		if message.other_group == hash "enemy" then
@@ -8,4 +13,12 @@ return function()
 			wait.delay(1.5)
 		end
 	end
+end
+
+function init(self)
+	flow.start(session)
+end
+
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
 end

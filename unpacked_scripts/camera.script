@@ -1,9 +1,16 @@
-return function()
+local flow = require "flow.flow"
+local wait = flow
+local monarch = require "monarch.monarch"
+local global = require "global"
+
+local function session()
 	local time = global.oxygen * 7.5 + 7.5
 	local speed = global.velocity * 32
 	local depth = time * speed
 	local begin_position = vmath.vector3(0, 0, 0)
 	local end_position = vmath.vector3(0, - depth, 0)
+
+	particlefx.play "default:/camera#foreground"
 
 	msg.post("loader:/music#underwater", "play_sound")
 	msg.post("loader:/music#down", "play_sound")
@@ -25,4 +32,12 @@ return function()
 	msg.post("loader:/music#up", "stop_sound")
 	msg.post("loader:/music#underwater", "stop_sound")
 	monarch.back()
+end
+
+function init(self)
+	flow.start(session)
+end
+
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
 end

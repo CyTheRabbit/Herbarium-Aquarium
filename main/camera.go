@@ -14,26 +14,6 @@ components {
   }
 }
 components {
-  id: "on_start"
-  component: "/flow/on_start.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  properties {
-    id: "script"
-    value: "scripts/camera.lua"
-    type: PROPERTY_TYPE_HASH
-  }
-}
-components {
   id: "foreground"
   component: "/assets/foreground.particlefx"
   position {
@@ -51,6 +31,21 @@ components {
 components {
   id: "lootbar"
   component: "/treasure/lootbar.gui"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "camera1"
+  component: "/unpacked_scripts/camera.script"
   position {
     x: 0.0
     y: 0.0

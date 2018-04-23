@@ -1,4 +1,7 @@
-return function()
+local flow = require "flow.flow"
+local wait = flow
+
+local function session()
 	local pos1 = go.get_position()
 	local pos2 = go.get_position()
 	pos2.y = pos2.y + 40
@@ -7,4 +10,12 @@ return function()
 		wait.go_animate(".", "position", go.PLAYBACK_ONCE_FORWARD, pos2, go.EASING_OUTSINE, 0.5)
 		wait.go_animate(".", "position", go.PLAYBACK_ONCE_FORWARD, pos1, go.EASING_LINEAR, 2)
 	end	
+end
+
+function init(self)
+	flow.start(session)
+end
+
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
 end

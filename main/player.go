@@ -14,12 +14,12 @@ components {
   }
 }
 components {
-  id: "collision_handler"
-  component: "/flow/on_start.script"
+  id: "loose"
+  component: "/assets/loose.particlefx"
   position {
     x: 0.0
-    y: 0.0
-    z: 0.0
+    y: -33.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -27,19 +27,14 @@ components {
     z: 0.0
     w: 1.0
   }
-  properties {
-    id: "script"
-    value: "scripts/player_collision.lua"
-    type: PROPERTY_TYPE_HASH
-  }
 }
 components {
-  id: "loose"
-  component: "/assets/loose.particlefx"
+  id: "player_collision"
+  component: "/unpacked_scripts/player_collision.script"
   position {
     x: 0.0
-    y: -33.0
-    z: 1.0
+    y: 0.0
+    z: 0.0
   }
   rotation {
     x: 0.0
