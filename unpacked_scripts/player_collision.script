@@ -16,7 +16,11 @@ local function session()
 end
 
 function init(self)
-	flow.start(session)
+	self.session = flow.start(session)
+end
+
+function final(self)
+	flow.stop(self.session)
 end
 
 function on_message(self, message_id, message, sender)

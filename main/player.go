@@ -50,7 +50,7 @@ embedded_components {
   "type: COLLISION_OBJECT_TYPE_DYNAMIC\n"
   "mass: 1.0\n"
   "friction: 1.0\n"
-  "restitution: 0.5\n"
+  "restitution: 0.0\n"
   "group: \"player\"\n"
   "mask: \"ground\"\n"
   "mask: \"enemy\"\n"
