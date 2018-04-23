@@ -4,7 +4,7 @@ local monarch = require "monarch.monarch"
 
 local function session()
 	msg.post("intro:/camera#camera", "acquire_camera_focus")
-
+	msg.post("loader:/music#up", "play_sound")
 
 	wait.delay(1)
 	go.animate("camera", "position.y", go.PLAYBACK_ONCE_FORWARD, 3752, go.EASING_INOUTCUBIC, 15)
@@ -21,6 +21,7 @@ local function session()
 	wait.until_input_pressed(hash "touch")
 	msg.post("#camera", "release_camera_focus")
 	msg.post("#", "next")
+	msg.post("loader:/music#up", "stop_sound")
 end
 
 function init(self)
