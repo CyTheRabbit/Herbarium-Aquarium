@@ -7,6 +7,10 @@ fonts {
   name: "big"
   font: "/assets/big.font"
 }
+textures {
+  name: "main"
+  texture: "/assets/main.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -46,7 +50,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "main/\320\272\320\275\320\276\320\277\320\272\320\2602"
   id: "velocity"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -344,7 +348,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "main/\320\272\320\275\320\276\320\277\320\272\320\2602"
   id: "agility"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -642,7 +646,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "main/\320\272\320\275\320\276\320\277\320\272\320\2602"
   id: "oxygen"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -940,7 +944,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "main/\320\272\320\275\320\276\320\277\320\272\320\2602"
   id: "torch"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

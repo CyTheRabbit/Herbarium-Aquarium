@@ -1,40 +1,10 @@
 components {
-  id: "collision"
-  component: "/samples/treasure.script"
+  id: "jellyfish"
+  component: "/unpacked_scripts/jellyfish.script"
   position {
     x: 0.0
     y: 0.0
     z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-components {
-  id: "bubbles"
-  component: "/assets/bubbles.particlefx"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-components {
-  id: "loot"
-  component: "/assets/loot.particlefx"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 1.0
   }
   rotation {
     x: 0.0
@@ -50,8 +20,8 @@ embedded_components {
   "type: COLLISION_OBJECT_TYPE_TRIGGER\n"
   "mass: 0.0\n"
   "friction: 0.1\n"
-  "restitution: 0.5\n"
-  "group: \"treasure\"\n"
+  "restitution: 1.0\n"
+  "group: \"enemy\"\n"
   "mask: \"player\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
@@ -70,11 +40,31 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 50.0\n"
+  "  data: 65.0\n"
   "}\n"
   "linear_damping: 0.0\n"
   "angular_damping: 0.0\n"
   "locked_rotation: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "sprite"
+  type: "sprite"
+  data: "tile_set: \"/assets/main.atlas\"\n"
+  "default_animation: \"jellyfish\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
     x: 0.0

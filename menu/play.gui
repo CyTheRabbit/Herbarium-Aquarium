@@ -7,6 +7,10 @@ fonts {
   name: "grand"
   font: "/assets/grand.font"
 }
+textures {
+  name: "main"
+  texture: "/assets/main.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -33,8 +37,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
+    x: 270.0
+    y: 75.0
     z: 0.0
     w: 1.0
   }
@@ -46,7 +50,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "main/\320\277\320\273\320\265\320\271"
   id: "box"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

@@ -6,7 +6,12 @@ go.property("id", 10)
 local global = require "global"
 
 local function loot(self)
-	global.score = global.score + self.gold
+	if not global.empty[self.id] then
+		global.score = global.score + self.gold
+		global.empty[self.id] = true
+	else
+		global.score = global.score + self.gold / 5
+	end
 	msg.post("default:/manager#score", "update")
 
 	particlefx.stop "#bubbles"
