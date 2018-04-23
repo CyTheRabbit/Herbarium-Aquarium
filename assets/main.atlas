@@ -122,6 +122,19 @@ animations {
   flip_horizontal: 0
   flip_vertical: 0
 }
+animations {
+  id: "superchest"
+  images {
+    image: "/assets/\321\201\321\203\320\275\320\264\321\203\320\272_\320\261\320\273\320\270\320\2721.png"
+  }
+  images {
+    image: "/assets/\321\201\321\203\320\275\320\264\321\203\320\272_\320\261\320\273\320\270\320\2722.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 2
+  flip_horizontal: 0
+  flip_vertical: 0
+}
 margin: 1
 extrude_borders: 0
 inner_padding: 0

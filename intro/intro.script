@@ -1,0 +1,35 @@
+local flow = require "flow.flow"
+local wait = flow
+local monarch = require "monarch.monarch"
+
+local function session()
+	msg.post("intro:/camera#camera", "acquire_camera_focus")
+
+
+	wait.delay(1)
+	go.animate("camera", "position.y", go.PLAYBACK_ONCE_FORWARD, 3752, go.EASING_INOUTCUBIC, 15)
+	go.animate("subtitle", "position.y", go.PLAYBACK_ONCE_FORWARD, 490, go.EASING_INOUTSINE, 5, 3)
+
+	wait.delay(8)
+	go.animate("subtitle", "position.y", go.PLAYBACK_ONCE_FORWARD, -360, go.EASING_INOUTSINE, 5)
+	go.animate("title", "position.y", go.PLAYBACK_ONCE_FORWARD, 440, go.EASING_INOUTSINE, 5)
+
+	wait.delay(5)
+	msg.post(".", "acquire_input_focus")
+	go.set_position(vmath.vector3(0, 480, 0), "pak")
+
+	wait.until_input_pressed(hash "touch")
+	monarch.show(hash "menu")
+end
+
+function init(self)
+	flow.start(session)
+end
+
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	flow.on_input(action_id, action)
+end
