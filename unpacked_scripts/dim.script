@@ -1,6 +1,6 @@
-go.property("dim_depth", 400)
-go.property("dim_scale_up", 40)
-go.property("dim_scale_down", 2)
+go.property("max_radius", 40)
+go.property("min_radius", 2)
+go.property("dim_speed", 0.05)
 
 function update(self, dt)
 	local pos = go.get_position "player"
@@ -11,6 +11,7 @@ function update(self, dt)
 	pos = pos + cam
 	go.set_position(pos)
 
-	local scale = vmath.lerp(math.min(-cam.y / self.dim_depth, 1), self.dim_scale_up, self.dim_scale_down)
+	local scale = self.max_radius + cam.y * self.dim_speed
+	scale = math.max(scale, self.min_radius)
 	go.set_scale(scale)
 end
