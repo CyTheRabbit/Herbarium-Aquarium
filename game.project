@@ -16,6 +16,7 @@ dynamic_orientation = 1
 
 [physics]
 scale = 0.02
+debug = 0
 
 [graphics]
 default_texture_min_filter = nearest

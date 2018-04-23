@@ -21,7 +21,8 @@ local function session()
 	go.set_position(begin_position)
 	wait.go_animate(".","position", go.PLAYBACK_ONCE_FORWARD, end_position, go.EASING_OUTSINE, time)
 
-	--
+	msg.post("#", "notify")
+	
 	msg.post("loader:/music#down", "stop_sound")
 	msg.post("loader:/music#up", "play_sound")
 
@@ -36,8 +37,16 @@ end
 
 function init(self)
 	flow.start(session)
+	self.table = {}
 end
 
 function on_message(self, message_id, message, sender)
+	if message_id == hash "track_reach" then
+		table.insert(self.table, sender)
+	elseif message_id == hash "notify" then
+		for k, v in pairs(self.table) do
+			msg.post(v, "bottom_reached")
+		end
+	end
 	flow.on_message(message_id, message, sender)
 end

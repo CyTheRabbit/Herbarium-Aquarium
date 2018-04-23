@@ -7,10 +7,10 @@ local function session()
 	while true do
 		local message_id, message = wait.until_message(hash "collision_response")
 		if message.other_group == hash "enemy" then
-			global.score = global.score - 1
+			global.score = global.score - 25
 			particlefx.play("#loose")
 			msg.post("manager#score", "update")
-			wait.delay(1.5)
+			wait.delay(1)
 		end
 	end
 end

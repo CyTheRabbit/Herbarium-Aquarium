@@ -1,0 +1,25 @@
+images {
+  image: "/tentacle/\321\211\321\203\320\2771.png"
+}
+images {
+  image: "/tentacle/\321\211\321\203\320\2773.png"
+}
+animations {
+  id: "attack"
+  images {
+    image: "/tentacle/\321\211\321\203\320\2771.png"
+  }
+  images {
+    image: "/tentacle/\321\211\321\203\320\2772.png"
+  }
+  images {
+    image: "/tentacle/\321\211\321\203\320\2773.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 6
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 1
+extrude_borders: 0
+inner_padding: 0

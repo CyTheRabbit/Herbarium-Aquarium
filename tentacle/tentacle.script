@@ -1,0 +1,21 @@
+go.property("position", vmath.vector3())
+
+local flow = require "flow.flow"
+local wait = flow
+
+local function session(self)
+	msg.post("default:/camera", "track_reach")
+	local origin = go.get_position()
+	wait.until_message(hash "bottom_reached")
+	wait.until_message(hash "trigger_response")
+	msg.post("#sprite", "play_animation", { id = hash "attack" })
+	wait.go_animate(".", "position", go.PLAYBACK_ONCE_FORWARD, origin + self.position, go.EASING_LINEAR, 0.5)
+	go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, origin, go.EASING_INSINE, 5)
+end
+
+function init(self)
+	flow.start(function() session(self) end)
+end
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
+end
