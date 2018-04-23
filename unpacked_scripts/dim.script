@@ -1,0 +1,16 @@
+go.property("dim_depth", 400)
+go.property("dim_scale_up", 40)
+go.property("dim_scale_down", 2)
+
+function update(self, dt)
+	local pos = go.get_position "player"
+	local cam = go.get_position "camera"
+	pos = pos - cam
+	pos.x = math.min(math.max(0, pos.x), 480)
+	pos.y = math.min(math.max(0, pos.y), 854)
+	pos = pos + cam
+	go.set_position(pos)
+
+	local scale = vmath.lerp(math.min(-cam.y / self.dim_depth, 1), self.dim_scale_up, self.dim_scale_down)
+	go.set_scale(scale)
+end
