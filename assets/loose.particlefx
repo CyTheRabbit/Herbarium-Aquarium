@@ -1,7 +1,7 @@
 emitters {
   id: "emitter"
   mode: PLAY_MODE_ONCE
-  duration: 0.5
+  duration: 0.25
   space: EMISSION_SPACE_WORLD
   position {
     x: 0.0
@@ -27,7 +27,7 @@ emitters {
     key: EMITTER_KEY_SPAWN_RATE
     points {
       x: 0.0
-      y: 20.0
+      y: 140.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -67,7 +67,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_LIFE_TIME
     points {
       x: 0.0
-      y: 0.25
+      y: 0.5
       t_x: 1.0
       t_y: 0.0
     }
@@ -77,15 +77,15 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 403.25867
-      t_x: 0.0061625
-      t_y: -0.999981
+      y: 1430.4094
+      t_x: 3.1039675E-4
+      t_y: -0.99999994
     }
     points {
       x: 1.0
-      y: -0.27762827
-      t_x: 1.0
-      t_y: 0.0
+      y: 344.91254
+      t_x: 0.0061625
+      t_y: -0.999981
     }
     spread: 0.0
   }
@@ -93,7 +93,7 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SIZE
     points {
       x: 0.0
-      y: 5.0
+      y: 15.0
       t_x: 1.0
       t_y: 0.0
     }
@@ -173,15 +173,9 @@ emitters {
     key: PARTICLE_KEY_SCALE
     points {
       x: 0.0
-      y: 0.13589457
-      t_x: 0.122861214
-      t_y: 0.99242383
-    }
-    points {
-      x: 1.0
-      y: 0.032201923
-      t_x: 0.16689023
-      t_y: -0.9859755
+      y: 1.0
+      t_x: 1.0
+      t_y: 0.0
     }
   }
   particle_properties {
@@ -215,9 +209,15 @@ emitters {
     key: PARTICLE_KEY_ALPHA
     points {
       x: 0.0
+      y: 1.8286753
+      t_x: 0.7328636
+      t_y: 0.68037564
+    }
+    points {
+      x: 1.0
       y: 0.0
-      t_x: 0.07194582
-      t_y: 0.99740857
+      t_x: 0.4099305
+      t_y: -0.91211677
     }
   }
   particle_properties {
