@@ -8,7 +8,6 @@ shared_state = 1
 title = Herbarium Aquarium
 dependencies = https://github.com/britzl/defold-lfs/archive/1.0.zip,https://github.com/britzl/monarch/archive/master.zip
 compress_archive = 0
-bundle_resources = /include_into_build
 
 [display]
 height = 854
