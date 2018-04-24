@@ -18,7 +18,6 @@ local function session()
 
 	msg.post("manager#oxy", "set_timer", { time = time })
 
-	go.set_position(begin_position)
 	wait.go_animate(".","position", go.PLAYBACK_ONCE_FORWARD, end_position, go.EASING_OUTSINE, time)
 
 	msg.post("#", "notify")
@@ -26,18 +25,21 @@ local function session()
 	msg.post("loader:/music#down", "stop_sound")
 	msg.post("loader:/music#up", "play_sound")
 
-	go.set_position(end_position)
-	wait.go_animate(".","position", go.PLAYBACK_ONCE_FORWARD, begin_position, go.EASING_LINEAR, time / 2)
-	wait.delay(2)
-
 	msg.post("loader:/music#up", "stop_sound")
 	msg.post("loader:/music#underwater", "stop_sound")
 	monarch.back()
 end
 
 function init(self)
-	flow.start(session)
+	msg.post("#camera", "acquire_camera_focus")
 	self.table = {}
+end
+
+function update(self)
+	local pos = go.get_position "player"
+	pos.y = math.min(0, pos.y - 427)
+	pos.x = pos.x - 240
+	go.set_position(pos)
 end
 
 function on_message(self, message_id, message, sender)

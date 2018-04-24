@@ -5,7 +5,7 @@ instances {
   children: "body"
   position {
     x: 250.0
-    y: 766.0
+    y: 680.0
     z: 0.0
   }
   rotation {
@@ -13,6 +13,14 @@ instances {
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "player_movement"
+    properties {
+      id: "speed"
+      value: "20000.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
   }
   scale3 {
     x: 0.5
@@ -41,8 +49,8 @@ instances {
   }
 }
 collection_instances {
-  id: "level_01"
-  collection: "/levels/level_01.collection"
+  id: "world"
+  collection: "/levels/world.collection"
   position {
     x: 0.0
     y: 0.0
@@ -181,6 +189,11 @@ embedded_instances {
   "    y: 0.0\n"
   "    z: 0.0\n"
   "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"max_radius\"\n"
+  "    value: \"20.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "}\n"
   "embedded_components {\n"

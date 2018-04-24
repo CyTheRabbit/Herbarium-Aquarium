@@ -1,35 +1,40 @@
 go.property("time", 2)
 go.property("current_time", 0)
 go.property("gold", 100)
-go.property("id", 10)
 
 local global = require "global"
 
 local function loot(self)
-	if not global.empty[self.id] then
+	local looted = false
+	local this = msg.url()
+	for url, _ in pairs(global.empty) do
+		if url == this then
+			looted = true
+		end
+	end
+	if not looted then
 		global.score = global.score + self.gold
-		global.empty[self.id] = true
+		global.empty[this] = true
 	else
 		global.score = global.score + self.gold / 5
 	end
 	msg.post("default:/manager#score", "update")
 
-	particlefx.stop "#bubbles"
+	particlefx.stop "#spark"
 	particlefx.play "#loot"
-	global.empty[self.id] = true
 
 	msg.post("loader:/music#coin", "play_sound")
 	go.delete()
 end
 
 function init(self)
-	particlefx.play "#bubbles"
+	particlefx.play "#spark"
 end
 
 function update(self)
 	if self.looting then
-		local cam_pos = go.get_position "default:/camera"
-		local spot_pos = go.get_position()
+		local cam_pos = go.get_world_position "default:/camera"
+		local spot_pos = go.get_world_position()
 		msg.post("default:/camera#lootbar", "pos", { pos = spot_pos - cam_pos })
 	end
 end

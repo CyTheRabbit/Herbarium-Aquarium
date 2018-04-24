@@ -14,7 +14,7 @@ emitters {
     z: 1.0
     w: 6.123234E-17
   }
-  tile_source: "/assets/bubbles.atlas"
+  tile_source: "/assets/particles.atlas"
   animation: "coin"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ALPHA
