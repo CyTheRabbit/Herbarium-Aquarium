@@ -1,12 +1,20 @@
 local global = require "global"
 local monarch = require "monarch.monarch"
+local flow = require "flow.flow"
+local wait = flow
 
 local function damage()
 	local box = gui.get_node "oxygen"
-	while gui.get_width(box) <= 0 do
+	while gui.get_size(box).x <= 0 do
+		if global.score <= 0 then
+			global.score = 0
+			monarch.back()
+			return
+		end
 		global.score = global.score - 1
 		particlefx.play "default:/player#loose"
-		wait.delay(1)
+		msg.post("#score", "update")
+		wait.delay(1/10)
 	end
 end
 
@@ -14,10 +22,29 @@ function init(self)
 	msg.post("#", "set_timer", { time = global.oxygen * 7.5 + 7.5 })
 end
 
+function final(self)
+	if self.session then
+		flow.stop(self.session)
+	end
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash "set_timer" then
 		gui.set_size(gui.get_node "oxygen", vmath.vector3(480, 8, 0))
-		gui.animate(gui.get_node "oxygen", "size.x", 0, gui.EASING_LINEAR, message.time, 0,
-		function() monarch.back() end)
+		gui.animate(gui.get_node "oxygen", "size.x",
+			0, gui.EASING_LINEAR,
+			message.time, 0,
+			function()
+				self.session = flow.start(damage)
+			end)
+	elseif message_id == hash "add_timer" then
+		local size = gui.get_size(gui.get_node "oxygen")
+		size.x = math.min(size.x + message.time, 480)
+		gui.animate(gui.get_node "oxygen", "size.x",
+			0, gui.EASING_LINEAR,
+			message.time, 0,
+			function()
+				self.session = flow.start(damage)
+			end)
 	end
 end
