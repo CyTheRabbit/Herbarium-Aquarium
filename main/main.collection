@@ -5,7 +5,7 @@ instances {
   children: "body"
   position {
     x: 250.0
-    y: 766.0
+    y: 680.0
     z: 0.0
   }
   rotation {
@@ -49,8 +49,8 @@ instances {
   }
 }
 collection_instances {
-  id: "level_01"
-  collection: "/levels/level_01.collection"
+  id: "world"
+  collection: "/levels/world.collection"
   position {
     x: 0.0
     y: 0.0

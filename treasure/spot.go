@@ -14,8 +14,8 @@ components {
   }
 }
 components {
-  id: "bubbles"
-  component: "/assets/bubbles.particlefx"
+  id: "spark"
+  component: "/assets/spark.particlefx"
   position {
     x: 0.0
     y: 0.0

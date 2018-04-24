@@ -14,7 +14,7 @@ local function loot(self)
 	end
 	msg.post("default:/manager#score", "update")
 
-	particlefx.stop "#bubbles"
+	particlefx.stop "#spark"
 	particlefx.play "#loot"
 	global.empty[self.id] = true
 
@@ -23,7 +23,7 @@ local function loot(self)
 end
 
 function init(self)
-	particlefx.play "#bubbles"
+	particlefx.play "#spark"
 end
 
 function update(self)
