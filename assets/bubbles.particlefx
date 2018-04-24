@@ -14,7 +14,7 @@ emitters {
     z: 0.0
     w: 1.0
   }
-  tile_source: "/assets/bubbles.atlas"
+  tile_source: "/assets/particles.atlas"
   animation: "bubbleSmall"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD
@@ -309,7 +309,7 @@ emitters {
     z: 0.0
     w: 1.0
   }
-  tile_source: "/assets/bubbles.atlas"
+  tile_source: "/assets/particles.atlas"
   animation: "bubbleLarge"
   material: "/builtins/materials/particlefx.material"
   blend_mode: BLEND_MODE_ADD

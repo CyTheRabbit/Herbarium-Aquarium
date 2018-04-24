@@ -7,6 +7,9 @@ images {
 images {
   image: "/assets/coin.png"
 }
+images {
+  image: "/assets/spark.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0
