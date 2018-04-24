@@ -7,16 +7,13 @@ shared_state = 1
 [project]
 title = Herbarium Aquarium
 dependencies = https://github.com/britzl/defold-lfs/archive/1.0.zip,https://github.com/britzl/monarch/archive/master.zip
-compress_archive = 0
 
 [display]
 height = 854
 width = 480
-dynamic_orientation = 1
 
 [physics]
 scale = 0.02
-debug = 0
 
 [graphics]
 default_texture_min_filter = nearest
