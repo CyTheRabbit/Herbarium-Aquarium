@@ -1,0 +1,22 @@
+local flow = require "flow.flow"
+local wait = flow
+local monarch = require "monarch.monarch"
+
+local function session()
+	wait.until_message(hash "trigger_response")
+	monarch.back()
+end
+
+function init(self)
+	self.session = flow.start(session)
+end
+
+function final(self)
+	if self.session then
+		flow.stop(self.session)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	flow.on_message(message_id, message, sender)
+end

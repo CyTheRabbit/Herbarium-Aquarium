@@ -4,6 +4,8 @@ local global = require "global"
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	self.pressed_point = vmath.vector3()
+	self.released_point = vmath.vector3()
 end
 
 function update(self, dt)

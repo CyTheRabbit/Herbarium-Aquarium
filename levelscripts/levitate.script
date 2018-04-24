@@ -1,0 +1,8 @@
+go.property("shift", vmath.vector3())
+go.property("time", 10)
+
+function init(self)
+	go.set(".", "euler.z", -0.5)
+	go.animate(".", "euler.z", go.PLAYBACK_LOOP_PINGPONG, 0.5, go.EASING_INOUTSINE, self.time)
+	go.animate(".", "position", go.PLAYBACK_LOOP_PINGPONG, go.get_position() + self.shift, go.EASING_INOUTSINE, self.time)
+end

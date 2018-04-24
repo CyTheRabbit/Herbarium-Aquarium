@@ -1,6 +1,23 @@
+local global = require "global"
+local monarch = require "monarch.monarch"
+
+local function damage()
+	local box = gui.get_node "oxygen"
+	while gui.get_width(box) <= 0 do
+		global.score = global.score - 1
+		particlefx.play "default:/player#loose"
+		wait.delay(1)
+	end
+end
+
+function init(self)
+	msg.post("#", "set_timer", { time = global.oxygen * 7.5 + 7.5 })
+end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash "set_timer" then
-		gui.set_size(gui.get_node "box", vmath.vector3(480, 8, 0))
-		gui.animate(gui.get_node "box", "size.x", 0, gui.EASING_LINEAR, message.time)
+		gui.set_size(gui.get_node "oxygen", vmath.vector3(480, 8, 0))
+		gui.animate(gui.get_node "oxygen", "size.x", 0, gui.EASING_LINEAR, message.time, 0,
+		function() monarch.back() end)
 	end
 end
